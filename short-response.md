@@ -26,7 +26,7 @@ Explain what it means when we say that "HTTP is stateless"? Explain why cookies 
 
 **Your answer:**
 
-When we say that "HTTP is stateless" it means that the client and the server have no memory of previous requests. Cookies are necessary in order to keep users logged in because 
+When we say that "HTTP is stateless" it means that the server has no memory of previous requests. Cookies are necessary in order to keep users logged in because the cookies have sessions that store session data that remains there across requests sent to the browser. So when a client sends a request, the server's response is sent with a cookie-session specific to that client. That cookie-session remains for every other request sent from that same client, allowing them to access a resource across multiple sessions without manually requesting the resource again.
 
 ## Question 4
 
