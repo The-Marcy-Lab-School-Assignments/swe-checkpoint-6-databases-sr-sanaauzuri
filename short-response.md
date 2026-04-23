@@ -18,7 +18,7 @@ Why should passwords **never** be stored as plaintext in a database? Explain wha
 
 **Your answer:**
 
-Passwords should **never** be stored as plaintext in a database because if the database is ever breached, the passwords are easily readable. Most users reuse passwords across other sites, so a breach of an application can also compromise a user’s credit/debit, email, health, and employment accounts. To solve this, we **hash** passwords. **Hashing** is a process that converts a string, usually a password, into an irreversible fixed-length string called a hash. This *“process”* of hashing a password is executed through a **hashing function**. Every hashing function must be **one-way** and **pure**. One-way meaning you cannot reverse-engineer the hashed password.  Pure meaning consistent, the input of a password always returns the same hashed password. For instance, if you have a function that is pure but not one-way, a malicious user can reverse the hash and access the user’s password. Also, if you have a function that is one way and not pure, the database can’t compare/verify the user’s password because the output for a password will differ each time it is hashed.  This makes it impossible to compare a hash to its original string.
+Passwords should **never** be stored as plaintext in a database because if the database is ever breached, the passwords are easily readable. Most users reuse passwords across other sites, so a breach of an application can also compromise a user’s credit/debit, email, health, and employment accounts. To solve this, we **hash** passwords. **Hashing** is a process that uses a mathematical algorithm to convert a string, usually a password, into an irreversible fixed-length string called a hash. This *“process”* of hashing a password is executed through a **hashing function**. Every hashing function must be **one-way** and **pure**. One-way meaning you cannot reverse-engineer the hashed password.  Pure meaning consistent, the input of a password always returns the same hashed password. For instance, if you have a function that is pure but not one-way, a malicious user can reverse the hash and access the user’s password. Also, if you have a function that is one way and not pure, the database can’t compare/verify the user’s password because the output for a password will differ each time it is hashed.  This makes it impossible to compare a hash to its original string.
 
 ## Question 3
 
@@ -26,7 +26,7 @@ Explain what it means when we say that "HTTP is stateless"? Explain why cookies 
 
 **Your answer:**
 
----
+When we say that "HTTP is stateless" it means that the client and the server have no memory of previous requests. Cookies are necessary in order to keep users logged in because 
 
 ## Question 4
 
@@ -34,7 +34,8 @@ A frontend can hide a "Delete Account" button from users who aren't logged in. W
 
 **Your answer:**
 
----
+That isn't enough to protect the `DELETE /api/users/:id` route on the server because a person with network access can bypass the frontend and access your API directly through any HTTP client such as curl, or a browser extension that can call on an endpoint. The backend implements `checkAuthentication`, also called **Authorization middleware**, that protects routes that require login. This includes routes to *update*, *create*, or *delete* owner-based resources and **excludes** public routes, such as requests to see/get all posts. Ownership-based authorization, checks that the logged-in user owns a resource before allowing them to *update*, *delete*, or *create* that resource.
+
 
 ## Question 5
 
