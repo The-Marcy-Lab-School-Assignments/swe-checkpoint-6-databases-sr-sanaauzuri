@@ -1,4 +1,4 @@
-# swe-checkpoint-6-databases-sr
+b draft# swe-checkpoint-6-databases-sr
 
 Short response questions for the Mod 6 Databases checkpoint. These questions cover authentication, authorization, full-stack architecture, and SQL concepts from across the module.
 
